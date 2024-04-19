@@ -14,7 +14,6 @@ avg_temp_cities = df_cities.groupby(['country', 'year', 'city']).agg({'avg_temp_
 df_yaounde1_dict = df_cities.to_dict('records')
 
 # Create a Dash app with the DARKLY theme
-app = dash.Dash(external_stylesheets=[dbc.themes.DARKLY])
 
 # Define custom styles for the header and cells
 header_style = {'backgroundColor': 'rgb(30, 30, 30)', 'fontWeight': 'bold', 'color': 'white'}
@@ -29,10 +28,8 @@ d_table = dash_table.DataTable(
 )
 
 df_rain = df_cities.groupby(['country', 'year']).agg({'will_it_rain_days': 'mean'}).reset_index()
-df_rain
 
 df_snow = df_cities.groupby(['country', 'year']).agg({'will_it_snow_days': 'mean'}).reset_index()
-df_snow
 
 # Define custom colors for each city
 color_map = {'Berlin': 'blue', 'Yaounde': 'green', 'Dublin': 'orange', 'Madrid': 'red'}
@@ -165,6 +162,6 @@ app.layout = html.Div([
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(port=8092)
+    app.run_server()
 
 
