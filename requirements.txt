@@ -3,7 +3,7 @@ gunicorn
 plotly==5.9
 dash-tools
 pandas==2.1.4
-dash_bootstrap_cpmponents
+dash_bootstrap_components
 #sqlalchmeny==2.0.25
 #python-dotenv
 #psycopg2==2.9.9
